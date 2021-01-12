@@ -29,7 +29,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           value=`cat "$GITHUB_EVENT_PATH" | jq -M .`
-          echo ::set-output name=ghEvent::$value
+          echo '::set-output name=GITHUB_EVENT_LOCAL::$value'
           
       - name: Check variable in new step
-        run: echo $ghEvent
+        run: echo $GITHUB_EVENT_LOCAL
