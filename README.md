@@ -1,4 +1,4 @@
-# ChineseChess-AlphaZero
+# ChineseChess-AlphaZero.
 
 ## About
 
