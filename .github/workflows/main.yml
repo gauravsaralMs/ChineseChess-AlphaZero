@@ -33,7 +33,7 @@ jobs:
       - name: Run a multi-line script
         id: local-event-generator
         run: |
-          value=`cat "$GITHUB_EVENT_PATH" | jq -C .`
+          value=`cat "$GITHUB_EVENT_PATH" | jq -c .`
           echo '::set-output name=GITHUB_EVENT_LOCAL::'"$value"
           
       - name: Check variable in new step
