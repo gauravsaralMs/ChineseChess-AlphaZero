@@ -30,6 +30,7 @@ jobs:
         run: |
           value=`cat "$GITHUB_EVENT_PATH" | jq -M .`
           echo '::set-output name=GITHUB_EVENT_LOCAL::$value'
+          id: local-event-generator
           
       - name: Check variable in new step
-        run: echo $GITHUB_EVENT_LOCAL
+        run: echo ${{ steps.local-event-generator.outputs.GITHUB_EVENT_LOCAL }}
